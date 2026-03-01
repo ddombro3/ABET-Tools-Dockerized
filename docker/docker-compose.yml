@@ -10,6 +10,8 @@ services:
       context: ./app/
       dockerfile: Dockerfile
     container_name: php_apache
+    env_file:
+    - env.demo
     environment:
       - ABET_PRIVATE_DIR=${ABET_PRIVATE_DIR}
       - DB_HOST=mysql
@@ -28,7 +30,7 @@ services:
       - app_network
     depends_on:
       - mysql
-
+      
   ###################################################
   # the MySQL container provides the database service for the application.
   # It is configured with environment variables (in ./.env) for the root password, database name, user, and password.

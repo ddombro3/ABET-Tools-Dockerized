@@ -5,10 +5,6 @@ declare(strict_types=1);
  * Password reset helper library
  * Path: /home/osburn/abet_private/lib/reset_password_lib.php
  *
- * Assumptions (adjust if your schema differs):
- * - users table has: id, email, password_hash
- * - password_resets table will have:
- *   id, user_id, email, token_hash, expires_at, used_at, created_at, requested_ip, user_agent
  */
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
